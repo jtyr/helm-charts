@@ -34,6 +34,37 @@ entries:
     version: 1.19.0
   - apiVersion: v1
     appVersion: lts
+    created: "2020-05-14T02:38:50.050064872Z"
+    description: Open source continuous integration server. It supports multiple SCM
+      tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
+      Maven-based projects as well as arbitrary scripts.
+    digest: ee763e0c4edebebf74fc7eeb07e4c6b53094d1d2ca8804139490c2a020c335d7
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - email: lachlan.evenson@microsoft.com
+      name: lachie83
+    - email: viglesias@google.com
+      name: viglesiasce
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    - email: mail@torstenwalter.de
+      name: torstenwalter
+    - email: garridomota@gmail.com
+      name: mogaal
+    - email: wmcdona89@gmail.com
+      name: wmcdona89
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    - https://github.com/maorfr/kube-tasks
+    - https://github.com/jenkinsci/configuration-as-code-plugin
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/jenkins-1.19.0-1/jenkins-1.19.0-1.tgz
+    version: 1.19.0-1
+  - apiVersion: v1
+    appVersion: lts
     created: "2020-05-13T15:57:11.869522791Z"
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
@@ -64,6 +95,33 @@ entries:
     - https://github.com/jtyr/helm-jenkins/releases/download/jenkins-1.18.3/jenkins-1.18.3.tgz
     version: 1.18.3
   kubernetes-dashboard:
+  - apiVersion: v1
+    appVersion: 2.0.0
+    created: "2020-05-14T02:38:50.148497668Z"
+    dependencies:
+    - condition: metrics-server.enabled
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 2.11.1
+    description: General-purpose web UI for Kubernetes clusters
+    digest: d9182c39522830ae140682c16dbf71a6c7d3f5dc12bae376cc0fb5b2c7a8e64a
+    home: https://github.com/kubernetes/dashboard
+    icon: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg
+    keywords:
+    - kubernetes
+    - dashboard
+    kubeVersion: '>=1.10.0-0'
+    maintainers:
+    - email: cdesaintmartin@wiremind.fr
+      name: desaintmartin
+    - email: davidy@funkypenguin.co.nz
+      name: funkypenguin
+    name: kubernetes-dashboard
+    sources:
+    - https://github.com/kubernetes/dashboard
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/kubernetes-dashboard-2.0.0-7/kubernetes-dashboard-2.0.0-7.tgz
+    version: 2.0.0-7
   - apiVersion: v1
     appVersion: 2.0.0
     created: "2020-05-14T02:00:11.305883611Z"
