@@ -32,6 +32,6 @@ jobs:
       #    ./get_helm.sh
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.0.0-rc.2
+        uses: helm/chart-releaser-action@master
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
