@@ -1,5 +1,20 @@
 apiVersion: v1
 entries:
+  guacamole:
+  - apiVersion: v1
+    appVersion: 1.1.0
+    created: "2020-06-05T23:40:27.265520379Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 1.6.2
+    description: A Helm chart for guacamole
+    digest: af31fe77d7e9bf0fefe8c428e6578998ff80c2091f612d14e2dabf6020c0a102
+    name: guacamole
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/guacamole-0.2.0/guacamole-0.2.0.tgz
+    version: 0.2.0
   jenkins:
   - apiVersion: v1
     appVersion: lts
