@@ -15,6 +15,20 @@ entries:
     urls:
     - https://github.com/jtyr/helm-charts/releases/download/guacamole-0.2.0/guacamole-0.2.0.tgz
     version: 0.2.0
+  - apiVersion: v1
+    appVersion: 1.1.0
+    created: "2020-06-06T20:15:03.671593942Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 1.6.2
+    description: A Helm chart for guacamole
+    digest: c11523a52fc4754cc655c6d2429abe1c885eddf8d534f7f01305965cf1628837
+    name: guacamole
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/guacamole-0.2.0-1/guacamole-0.2.0-1.tgz
+    version: 0.2.0-1
   jenkins:
   - apiVersion: v1
     appVersion: lts
