@@ -34,7 +34,7 @@ guacamole:
     #      servicePort: use-annotation
     #  - backend:
     #      serviceName: >-
-    #        {{ include "kubernetes-dashboard.fullname" . }}
+    #        {{ include "guacamole.fullname" . }}
     #      # Don't use string here, use only integer value!
     #      servicePort: 443
     path: /
@@ -83,6 +83,9 @@ guacamole:
   tolerations: []
 
   affinity: {}
+
+  # Change this to ROOT to get rid of the /guacamole prefix
+  webapp_context: guacamole
 
 guacd:
   replicaCount: 1
