@@ -9,8 +9,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   annotations:
-{{ toYaml .Values.service.annotations | indent 4 }}
-{{- end }}
+{{ toYaml .Values.guacamole.service.annotations | indent 4 }}
 spec:
   type: {{ .Values.guacamole.service.type }}
   ports:
