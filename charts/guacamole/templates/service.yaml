@@ -8,6 +8,9 @@ metadata:
     helm.sh/chart: {{ include "guacamole.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+{{ toYaml .Values.service.annotations | indent 4 }}
+{{- end }}
 spec:
   type: {{ .Values.guacamole.service.type }}
   ports:

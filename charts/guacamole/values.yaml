@@ -16,6 +16,7 @@ guacamole:
   service:
     type: ClusterIP
     port: 80
+    annotations: {}
 
   mysql:
     MYSQL_HOSTNAME: guacamole-mysql
