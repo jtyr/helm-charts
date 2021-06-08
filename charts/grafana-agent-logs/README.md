@@ -1,6 +1,6 @@
 # Agent Helm Chart - Logs
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.13.0](https://img.shields.io/badge/AppVersion-v0.13.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Logs part of the Grafana Agent.
 
@@ -13,7 +13,7 @@ Make sure you have Helm [installed](https://helm.sh/docs/using_helm/#installing-
 ## Get Repo Info
 
 ```shell
-helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add jtyr https://jtyr.github.io/helm-charts
 helm repo update
 ```
 
@@ -25,7 +25,7 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 This kind of deployment uses configuration specified at the time of deployment.
 
 ```shell
-cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent grafana/agent-logs
+cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent-logs jtyr/grafana-agent-logs
 # Keep the reserce names simple
 fullnameOverride: agent-logs
 
