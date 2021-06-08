@@ -3,6 +3,33 @@ entries:
   grafana-agent:
   - apiVersion: v2
     appVersion: v0.15.0
+    created: "2021-06-08T14:52:27.696756764Z"
+    dependencies:
+    - name: grafana-agent-logs
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.1
+    - name: grafana-agent-metrics
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.1
+    - name: grafana-agent-traces
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.1
+    description: Grafana Agent
+    digest: d3410d03eb67688997403b5025d95aa3ceaf6ab9909f36ff490ffff89fe6f1dd
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-0.1.2/grafana-agent-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v0.15.0
     created: "2021-06-08T13:52:11.774052678Z"
     dependencies:
     - name: grafana-agent-logs
