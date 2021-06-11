@@ -1,6 +1,6 @@
 # Agent Helm Chart
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy all three parts of the Grafana Agent (Logs,
 Metrics and Traces) at once.
