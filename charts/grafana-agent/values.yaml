@@ -1,11 +1,11 @@
 # Configuration of the agent-logs chart
-agent-logs:
+grafana-agent-logs:
   enabled: true
 
 # Configuration of the agent-metrics chart
-agent-metrics:
+grafana-agent-metrics:
   enabled: true
 
 # Configuration of the agent-traces chart
-agent-traces:
+grafana-agent-traces:
   enabled: true

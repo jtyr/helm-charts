@@ -1,6 +1,6 @@
 # Agent Helm Chart
 
-![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy all three parts of the Grafana Agent (Logs,
 Metrics and Traces) at once.
@@ -38,13 +38,13 @@ _secret: &secret
 fullnameOverride: agent
 
 # Configure the Agent Logs chart
-agent-logs:
+grafana-agent-logs:
   secret: *secret
   accessConfig:
     username: 12345
 
 # Configure the Agent Metrics chart
-agent-metrics:
+grafana-agent-metrics:
   secret: *secret
   accessConfig:
     username: 67890
@@ -57,7 +57,7 @@ agent-metrics:
               - test-app
 
 # Configure the Agent Traces chart
-agent-traces:
+grafana-agent-traces:
   secret: *secret
   accessConfig:
     username: 34567
@@ -117,13 +117,13 @@ _secret: &secret
     password: cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedc
 
 # Configure the Agent Logs chart
-agent-logs:
+grafana-agent-logs:
   secret: *secret
   urlConfig:
     username: 12345
 
 # Configure the Agent Metrics chart
-agent-metrics:
+grafana-agent-metrics:
   scrapingServiceDeployment:
     <<: *ss
     kvstore:
@@ -137,7 +137,7 @@ agent-metrics:
   secret: *secret
 
 # Configure the Agent Traces chart
-agent-traces:
+grafana-agent-traces:
   secret: *secret
   pushConfig:
     username: 34567
@@ -163,7 +163,7 @@ scrape_configs:
             - test-app
 ```
 
-Forward Grafana Agent port from a pod (e.g `agent-metrics`) to the local
+Forward Grafana Agent port from a pod (e.g `grafana-agent-metrics`) to the local
 machine:
 
 ```shell
@@ -190,6 +190,6 @@ curl -X POST --data-binary /path/to/my/config.yaml localhost:8080/agent/api/v1/c
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| agent-logs.enabled | bool | `true` |  |
-| agent-metrics.enabled | bool | `true` |  |
-| agent-traces.enabled | bool | `true` |  |
+| grafana-agent-logs.enabled | bool | `true` |  |
+| grafana-agent-metrics.enabled | bool | `true` |  |
+| grafana-agent-traces.enabled | bool | `true` |  |
