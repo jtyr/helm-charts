@@ -1,8 +1,8 @@
-{{- if and .Values.enabled .Values.config.agentDeployment }}
+{{- if and .Values.enabled .Values.configMap.create .Values.config.agentDeployment }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "this.fullnameDeployment" . }}
+  name: {{ default (include "this.fullnameDeployment" .) .Values.configMap.nameDeployment }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "this.labelsDeployment" . | nindent 4 }}

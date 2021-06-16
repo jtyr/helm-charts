@@ -1,6 +1,6 @@
 # Agent Helm Chart - Traces
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Traces part of the Grafana Agent.
 
@@ -57,6 +57,8 @@ END
 | annotations | object | `{}` | DaemonSet annotations. |
 | config.agent | string | See the value in the `values.yaml` file. | Agent configuration template. |
 | config.strategies | string | See the value in the `values.yaml` file. | Sampling strategies configuration template. |
+| configMap.create | bool | `true` | Whether this chart should create the ConfigMap or not. |
+| configMap.name | string | `""` | Name of the ConfigMap. If empty, the name is determined from the release. |
 | enabled | bool | `true` | Whether this chart is enabled. Useful when this chart is used as a dependency from another chart. |
 | env | list | `[]` | Environment variables for the Agent container. |
 | extraArgs | list | `[]` | Additional command arguments for the Agent container. |

@@ -89,7 +89,7 @@ spec:
         {{- toYaml .Values.tolerations | nindent 8 }}
       volumes:
         - configMap:
-            name: {{ include "this.fullname" . }}
+            name: {{ default (include "this.fullname" .) .Values.configMap.name }}
           name: agent-config
         {{- if .Values.secret.mount }}
         - secret:

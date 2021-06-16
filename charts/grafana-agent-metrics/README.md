@@ -1,6 +1,6 @@
 # Agent Helm Chart - Metrics
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Metrics part of the Grafana Agent.
 
@@ -57,6 +57,9 @@ END
 | annotations | object | `{}` | DaemonSet and Deployment annotations. |
 | config.agent | string | See the value in the `values.yaml` file. | Agent configuration template used by the DaemonSet. |
 | config.agentDeployment | string | See the value in the `values.yaml` file. | Agent configuration template used by the Deployment. |
+| configMap.create | bool | `true` | Whether this chart should create the ConfigMap or not. |
+| configMap.name | string | `""` | Name of the ConfigMap. If empty, the name is determined from the release. |
+| configMap.nameDeployment | string | `""` | Name of the Deployment ConfigMap. If empty, the name is determined from the release. |
 | deployment.replicas | int | `1` | Number of replicas of the Deployment. |
 | enabled | bool | `true` | Whether this chart is enabled. Useful when this chart is used as a dependency from another chart. |
 | env | list | `[]` | Environment variables for the Agent container. |

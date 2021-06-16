@@ -83,6 +83,15 @@ serviceAccount:
 deployment:
   replicas: 1
 
+# Name and creation of the ConfigMap used for Agnet configuration
+configMap:
+  # If empty, the name is determined from the release
+  # (set this if another ConfigMap should be used for the Agent configuration)
+  name:
+  # Whether this chart should create the ConfigMap or not
+  # (set to false if another ConfigMap should be used)
+  create: true
+
 # Grafana Cloud connection
 accessConfig:
   url: https://prometheus-blocks-prod-us-central1.grafana.net/api/prom/push
