@@ -353,6 +353,17 @@ entries:
     urls:
     - https://github.com/jtyr/helm-charts/releases/download/guacamole-0.2.0-1/guacamole-0.2.0-1.tgz
     version: 0.2.0-1
+  loki-rule-operator:
+  - apiVersion: v2
+    appVersion: v0.5.0
+    created: "2021-06-16T08:38:31.847651938Z"
+    description: Install CRDs to handle Loki rules
+    digest: 06e02dacb58e023be7d64a706067a2ddd4bb9d7169ac18279cf3ae628c228311
+    name: loki-rule-operator
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/loki-rule-operator-0.1.1/loki-rule-operator-0.1.1.tgz
+    version: 0.1.1
   openvpn:
   - apiVersion: v2
     appVersion: 1.1.0
