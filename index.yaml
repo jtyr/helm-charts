@@ -272,6 +272,23 @@ entries:
   grafana-agent-metrics:
   - apiVersion: v2
     appVersion: v0.15.0
+    created: "2021-06-25T15:11:57.987891027Z"
+    description: Grafana Agent - Metrics
+    digest: 1be209b20a35136025ca66532076c5cf8842cafc3930331b00f0989e8740c1d4
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-metrics
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.4/grafana-agent-metrics-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: v0.15.0
     created: "2021-06-25T11:25:02.014364895Z"
     description: Grafana Agent - Metrics
     digest: fefe9b6d41cc89d8273232c7e3dea53ea9b6ad71fcf4329ab392cfc153649bf7
