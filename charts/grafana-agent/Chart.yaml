@@ -1,6 +1,6 @@
 apiVersion: v2
 name: grafana-agent
-version: 0.1.6
+version: 0.1.7
 appVersion: v0.15.0
 kubeVersion: "^1.16.0-0"
 description: Grafana Agent
@@ -17,7 +17,7 @@ dependencies:
     version: 0.1.2
     repository: https://jtyr.github.io/helm-charts
   - name: grafana-agent-metrics
-    version: 0.1.2
+    version: 0.1.3
     repository: https://jtyr.github.io/helm-charts
   - name: grafana-agent-traces
     version: 0.1.2
