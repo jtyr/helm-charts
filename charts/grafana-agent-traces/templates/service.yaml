@@ -38,6 +38,9 @@ spec:
     - name: agent-opencensus
       port: 55678
       targetPort: 55678
+    {{- with .Values.extraPorts }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
   selector:
     {{- include "this.selectorLabels" . | nindent 4 }}
 {{- end }}

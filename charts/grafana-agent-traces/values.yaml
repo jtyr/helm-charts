@@ -77,6 +77,14 @@ serviceAccount:
   name: ""
   annotations: {}
 
+# List of extra ports:
+extraPorts: []
+#extraPorts:
+#  - containerPort: 1234
+#    name: myport
+#    # Optinal
+#    protocol: UDP
+
 # Service annotations
 service:
   annotations: {}

@@ -61,6 +61,9 @@ spec:
               name: otlp
             - containerPort: 55678
               name: opencensus
+            {{- with .Values.extraPorts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
           readinessProbe:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           livenessProbe:
