@@ -58,7 +58,7 @@ END
 | config.agent | string | See the value in the `values.yaml` file. | Agent configuration template used by the DaemonSet. |
 | config.agentDeployment | string | See the value in the `values.yaml` file. | Agent configuration template used by the Deployment. |
 | configMap.create | bool | `true` | Whether this chart should create the ConfigMap or not. |
-| configMap.name | string | `""` | Name of the ConfigMap. If empty, the name is determined from the release. |
+| configMap.name | string | `""` | Name of the DeamonSet ConfigMap. If empty, the name is determined from the release. |
 | configMap.nameDeployment | string | `""` | Name of the Deployment ConfigMap. If empty, the name is determined from the release. |
 | deployment.replicas | int | `1` | Number of replicas of the Deployment. |
 | enabled | bool | `true` | Whether this chart is enabled. Useful when this chart is used as a dependency from another chart. |
