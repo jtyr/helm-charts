@@ -247,6 +247,23 @@ entries:
   grafana-agent-logs:
   - apiVersion: v2
     appVersion: v0.15.0
+    created: "2021-06-26T00:20:25.370087332Z"
+    description: Grafana Agent - Logs
+    digest: 9406eea5b0f73d088994fcccbdfc28bd98db96c0b98356723d58b29709caed4a
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-logs
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-logs-0.1.3/grafana-agent-logs-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: v0.15.0
     created: "2021-06-16T09:01:44.302101769Z"
     description: Grafana Agent - Logs
     digest: 0a7951fca44d1e3633b9f55e7784401065f80d2e7c7604593cb7486181edfe16
@@ -297,6 +314,23 @@ entries:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-logs-0.1.0/grafana-agent-logs-0.1.0.tgz
     version: 0.1.0
   grafana-agent-metrics:
+  - apiVersion: v2
+    appVersion: v0.15.0
+    created: "2021-06-26T00:20:25.504660401Z"
+    description: Grafana Agent - Metrics
+    digest: 4e5d874a21068356b38e49f1ed7daf22245ea4e02a3d035410ea2b2d7e46cdf2
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-metrics
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.5/grafana-agent-metrics-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-25T15:11:57.987891027Z"
@@ -383,6 +417,23 @@ entries:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.0/grafana-agent-metrics-0.1.0.tgz
     version: 0.1.0
   grafana-agent-traces:
+  - apiVersion: v2
+    appVersion: v0.15.0
+    created: "2021-06-26T00:20:25.621990471Z"
+    description: Grafana Agent - Traces
+    digest: 8d2eb8efd65b3a6404d737086b5500883f5b6a5b694b9c494848140caba692ca
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-traces
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-traces-0.1.3/grafana-agent-traces-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-16T09:01:44.56123749Z"
