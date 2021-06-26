@@ -95,6 +95,16 @@ configMap:
   # (set to false if another ConfigMap should be used)
   create: true
 
+# Watcher sidecar details
+watcher:
+  # Whether to create the watcher sidecar or not
+  create: false
+  image:
+    # Watcher sidecar image repository
+    repository: jtyr/volume-watcher
+    # Watcher sidecar image tag (latest if empty)
+    tag:
+
 # Grafana Cloud connection
 accessConfig:
   url: https://prometheus-blocks-prod-us-central1.grafana.net/api/prom/push

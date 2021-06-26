@@ -21,12 +21,26 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
       annotations:
+        {{- if .Values.configMap.create }}
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- end }}
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
       containers:
+        {{- if .Values.watcher.create }}
+        - name: volume-watcher
+          image: "{{ .Values.watcher.image.repository }}:{{ .Values.watcher.image.tag | default "latest" }}"
+          env:
+            - name: VOLUMEWATCHER_DIR
+              value: /etc/agent
+            - name: VOLUMEWATCHER_ENDPOINT
+              value: http://localhost:8080/-/reload
+          volumeMounts:
+            - mountPath: /etc/agent
+              name: agent-config
+        {{- end }}
         - args:
             - -config.file=/etc/agent/agent.yaml
             {{- with .Values.extraArgs }}

@@ -1,6 +1,6 @@
 # Agent Helm Chart - Metrics
 
-![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Metrics part of the Grafana Agent.
 
@@ -101,3 +101,6 @@ END
 | serviceAccount.name | string | `""` | Service Account name. |
 | tolerations[0].effect | string | `"NoSchedule"` | Pod toleration effect. |
 | tolerations[0].operator | string | `"Exists"` | Pod toleration operator. |
+| watcher.create | bool | `false` | Whether to create the watcher sidecar or not. |
+| watcher.image.repository | string | `"jtyr/volume-watcher"` | Watcher sidecar image repository. |
+| watcher.image.tag | string | `"jtyr/volume-watcher"` | Watcher sidecar image tag (`latest` if empty). |
