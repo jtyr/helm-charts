@@ -1,6 +1,6 @@
 # Agent Helm Chart - Traces
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v0.15.0](https://img.shields.io/badge/AppVersion-v0.15.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Traces part of the Grafana Agent.
 
@@ -59,12 +59,14 @@ END
 | config.strategies | string | See the value in the `values.yaml` file. | Sampling strategies configuration template. |
 | configMap.create | bool | `true` | Whether this chart should create the ConfigMap or not. |
 | configMap.name | string | `""` | Name of the ConfigMap. If empty, the name is determined from the release. |
+| defaultPorts | list | See the value in the `values.yaml` file. | Default ports to be used in the `DaemonSet` and the `Service`. |
 | enabled | bool | `true` | Whether this chart is enabled. Useful when this chart is used as a dependency from another chart. |
 | env | list | `[]` | Environment variables for the Agent container. |
 | extraArgs | list | `[]` | Additional command arguments for the Agent container. |
 | extraConfig | object | `{}` | Extra top level Agent configuration. |
 | extraDefaultConfigConfig | list | `[]` | Extra config on the default configuration level. |
 | extraDefaultScrapeConfig | list | `[]` | Extra scrape config on the default configuration level. |
+| extraPorts | list | `[]` | Extra ports to be used in the `DaemonSet` and the `Service`. |
 | extraServiceConfig | list | `[]` | Extra Agent configuration on the service level. |
 | extraVolumeMounts | list | `[]` | Additional volume mounts for the Agent container. |
 | extraVolumes | list | `[]` | Additional volumes for the Pod. |

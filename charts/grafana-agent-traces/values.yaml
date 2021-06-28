@@ -77,10 +77,31 @@ serviceAccount:
   name: ""
   annotations: {}
 
-# List of extra ports:
+# List of default ports
+defaultPorts:
+  - port: 8080
+    name: http-metrics
+  - port: 6831
+    name: thrift-compact
+    protocol: UDP
+  - port: 6832
+    name: thrift-binary
+    protocol: UDP
+  - port: 14268
+    name: thrift-http
+  - port: 14250
+    name: thrift-grpc
+  - port: 9411
+    name: zipkin
+  - port: 55680
+    name: otlp
+  - port: 55678
+    name: opencensus
+
+# List of extra ports
 extraPorts: []
 #extraPorts:
-#  - containerPort: 1234
+#  - port: 1234
 #    name: myport
 #    # Optinal
 #    protocol: UDP

@@ -12,34 +12,21 @@ metadata:
   {{- end }}
 spec:
   ports:
-    - name: agent-http-metrics
-      port: 8080
-      targetPort: 8080
-    - name: agent-thrift-compact
-      port: 6831
-      protocol: UDP
-      targetPort: 6831
-    - name: agent-thrift-binary
-      port: 6832
-      protocol: UDP
-      targetPort: 6832
-    - name: agent-thrift-http
-      port: 14268
-      targetPort: 14268
-    - name: agent-thrift-grpc
-      port: 14250
-      targetPort: 14250
-    - name: agent-zipkin
-      port: 9411
-      targetPort: 9411
-    - name: agent-otlp
-      port: 55680
-      targetPort: 55680
-    - name: agent-opencensus
-      port: 55678
-      targetPort: 55678
-    {{- with .Values.extraPorts }}
-    {{- toYaml . | nindent 4 }}
+    {{- range .Values.defaultPorts }}
+    - name: agent-{{ .name }}
+      port: {{ .port }}
+      {{- if hasKey . "protocol" }}
+      protocol: {{ .protocol }}
+      {{- end }}
+      targetPort: {{ .port }}
+    {{- end }}
+    {{- range .Values.extraPorts }}
+    - name: agent-{{ .name }}
+      port: {{ .port }}
+      {{- if hasKey . "protocol" }}
+      protocol: {{ .protocol }}
+      {{- end }}
+      targetPort: {{ .port }}
     {{- end }}
   selector:
     {{- include "this.selectorLabels" . | nindent 4 }}

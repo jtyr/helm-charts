@@ -57,26 +57,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           name: agent
           ports:
-            - containerPort: 8080
-              name: http-metrics
-            - containerPort: 6831
-              name: thrift-compact
-              protocol: UDP
-            - containerPort: 6832
-              name: thrift-binary
-              protocol: UDP
-            - containerPort: 14268
-              name: thrift-http
-            - containerPort: 14250
-              name: thrift-grpc
-            - containerPort: 9411
-              name: zipkin
-            - containerPort: 55680
-              name: otlp
-            - containerPort: 55678
-              name: opencensus
-            {{- with .Values.extraPorts }}
-            {{- toYaml . | nindent 12 }}
+            {{- range .Values.defaultPorts }}
+            - name: {{ .name }}
+              containerPort: {{ .port }}
+              {{- if hasKey . "protocol" }}
+              protocol: {{ .protocol }}
+              {{- end  }}
+            {{- end }}
+            {{- range .Values.extraPorts }}
+            - name: {{ .name }}
+              containerPort: {{ .port }}
+              {{- if hasKey . "protocol" }}
+              protocol: {{ .protocol }}
+              {{- end  }}
             {{- end }}
           readinessProbe:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
