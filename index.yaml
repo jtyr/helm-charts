@@ -446,6 +446,23 @@ entries:
   grafana-agent-traces:
   - apiVersion: v2
     appVersion: v0.15.0
+    created: "2021-06-28T10:48:56.963770897Z"
+    description: Grafana Agent - Traces
+    digest: bf19a445858d466e289e6b0bbf7f67cbee7b7f4b2bf70cd0420226dae9fedc4b
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-traces
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-traces-0.1.4/grafana-agent-traces-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: v0.15.0
     created: "2021-06-26T00:20:25.621990471Z"
     description: Grafana Agent - Traces
     digest: 8d2eb8efd65b3a6404d737086b5500883f5b6a5b694b9c494848140caba692ca
