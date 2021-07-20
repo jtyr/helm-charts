@@ -531,6 +531,17 @@ entries:
     urls:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.0/grafana-agent-metrics-0.1.0.tgz
     version: 0.1.0
+  grafana-agent-operator:
+  - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-20T22:09:32.056966284Z"
+    description: A Helm chart for Grafana Agent Operator
+    digest: d1c23a8305910addc46b2e957625b23b1b7dd8739ebfce22925625e3b7298705
+    name: grafana-agent-operator
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-operator-0.1.0/grafana-agent-operator-0.1.0.tgz
+    version: 0.1.0
   grafana-agent-traces:
   - apiVersion: v2
     appVersion: v0.17.0
