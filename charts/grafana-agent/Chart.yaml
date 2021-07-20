@@ -1,7 +1,7 @@
 apiVersion: v2
 name: grafana-agent
-version: 0.1.11
-appVersion: v0.15.0
+version: 0.1.12
+appVersion: v0.17.0
 kubeVersion: "^1.16.0-0"
 description: Grafana Agent
 home: https://grafana.com/docs/grafana-cloud/agent/
