@@ -2,6 +2,33 @@ apiVersion: v1
 entries:
   grafana-agent:
   - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-20T15:32:30.573425995Z"
+    dependencies:
+    - name: grafana-agent-logs
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.3
+    - name: grafana-agent-metrics
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.5
+    - name: grafana-agent-traces
+      repository: https://jtyr.github.io/helm-charts
+      version: 0.1.4
+    description: Grafana Agent
+    digest: b7c50a04316e12119e605dafbdec8ff0e994324219ef7fd9100ee1519d8e981e
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-0.1.12/grafana-agent-0.1.12.tgz
+    version: 0.1.12
+  - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-28T10:50:05.799244622Z"
     dependencies:
@@ -300,6 +327,23 @@ entries:
     version: 0.1.0
   grafana-agent-logs:
   - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-20T15:32:30.723483556Z"
+    description: Grafana Agent - Logs
+    digest: 77976f8fd768226af15f3cf9b012ea79891f45c315e43ea7debf8a7fa104e2fb
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-logs
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-logs-0.1.4/grafana-agent-logs-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-26T00:20:25.370087332Z"
     description: Grafana Agent - Logs
@@ -368,6 +412,23 @@ entries:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-logs-0.1.0/grafana-agent-logs-0.1.0.tgz
     version: 0.1.0
   grafana-agent-metrics:
+  - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-20T15:32:30.872988012Z"
+    description: Grafana Agent - Metrics
+    digest: 81a283c382642d9a88e523e28755d584a5315b0b20c138c5ad2c035c9ab274ea
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-metrics
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.6/grafana-agent-metrics-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-26T00:20:25.504660401Z"
@@ -471,6 +532,23 @@ entries:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.0/grafana-agent-metrics-0.1.0.tgz
     version: 0.1.0
   grafana-agent-traces:
+  - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-20T15:32:31.008393579Z"
+    description: Grafana Agent - Traces
+    digest: ac680df0d09cc0c360b49e8ac6ebbd4316fde51b8f81d3a1f2850f4c303f1df1
+    home: https://grafana.com/docs/grafana-cloud/agent/
+    icon: https://github.com/grafana/agent/raw/main/docs/assets/logo_and_name.png
+    kubeVersion: ^1.16.0-0
+    maintainers:
+    - email: jiri.tyr@gmail.com
+      name: Jiri Tyr
+    name: grafana-agent-traces
+    sources:
+    - https://github.com/grafana/agent
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-traces-0.1.5/grafana-agent-traces-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v2
     appVersion: v0.15.0
     created: "2021-06-28T10:48:56.963770897Z"
