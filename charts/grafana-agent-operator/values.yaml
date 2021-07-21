@@ -1,6 +1,9 @@
 # Number of replicas to run
 replicaCount: 1
 
+# Deployment annotations
+annotations: {}
+
 # Pod annotations
 podAnnotations: {}
 

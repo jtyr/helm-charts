@@ -4,6 +4,8 @@ metadata:
   name: {{ include "this.fullname" . }}
   labels:
     {{- include "this.labels" . | nindent 4 }}
+  annotations:
+    {{- toYaml .Values.annotations | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}

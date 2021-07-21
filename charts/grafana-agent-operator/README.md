@@ -1,6 +1,6 @@
 # Grafana Agent Operator Helm Chart
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.17.0](https://img.shields.io/badge/AppVersion-v0.17.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: v0.17.0](https://img.shields.io/badge/AppVersion-v0.17.0-informational?style=flat-square)
 
 This Helm chart allows to deploy the Grafana Agent Operator.
 
@@ -50,7 +50,8 @@ TODO
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | replicaCount | int | `1` | Number of replicas to run |
-| podAnnotations | object | `{}` | Pod annotations
+| annotations | object | `{}` | Deployment annotations. |
+| podAnnotations | object | `{}` | Pod annotations. |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy. |
 | image.pullSecrets | list | `[]` | List of image pull secrets. |
 | image.repository | string | `"grafana/agent"` | Image repository and name. |
