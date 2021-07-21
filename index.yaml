@@ -3,6 +3,16 @@ entries:
   grafana-agent:
   - apiVersion: v2
     appVersion: v0.17.0
+    created: "2021-07-21T23:26:04.087698974Z"
+    description: A Helm chart for Grafana Agent
+    digest: 5d651e3e9bc65fac38c95c51006269f817af4656d7502fd1071bcccbe30b4878
+    name: grafana-agent
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-0.2.0/grafana-agent-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v0.17.0
     created: "2021-07-20T15:32:30.573425995Z"
     dependencies:
     - name: grafana-agent-logs
@@ -532,6 +542,16 @@ entries:
     - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-metrics-0.1.0/grafana-agent-metrics-0.1.0.tgz
     version: 0.1.0
   grafana-agent-operator:
+  - apiVersion: v2
+    appVersion: v0.17.0
+    created: "2021-07-21T23:26:04.297730861Z"
+    description: A Helm chart for Grafana Agent Operator
+    digest: 40269edce4aec4aeb6ce1152ca62b8304f3feda3bc96a804516a395786510f79
+    name: grafana-agent-operator
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-operator-0.1.1/grafana-agent-operator-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: v0.17.0
     created: "2021-07-20T22:09:32.056966284Z"
