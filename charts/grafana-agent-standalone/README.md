@@ -2,8 +2,8 @@
 
 ![Version: 0.1.12](https://img.shields.io/badge/Version-0.1.12-informational?style=flat-square) ![AppVersion: v0.17.0](https://img.shields.io/badge/AppVersion-v0.17.0-informational?style=flat-square)
 
-This Helm chart allows to deploy all three parts of the Grafana Agent (Logs,
-Metrics and Traces) at once.
+This Helm chart allows to deploy all three standalone parts of the Grafana Agent
+(Logs, Metrics and Traces) at once.
 
 
 ## Prerequisites
@@ -28,7 +28,7 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 This kind of deployment uses configuration specified at the time of deployment.
 
 ```shell
-cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent grafana/agent
+cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent jtyr/grafana-agent-standalone
 # Just to share the same password accross all parts of the Agent
 _secret: &secret
   data:

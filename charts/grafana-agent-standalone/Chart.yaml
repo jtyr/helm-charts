@@ -1,5 +1,5 @@
 apiVersion: v2
-name: grafana-agent
+name: grafana-agent-standalone
 version: 0.1.12
 appVersion: v0.17.0
 kubeVersion: "^1.16.0-0"
