@@ -63,3 +63,5 @@ prometheus:
     #  operator: In
     #  values:
     #    - grafana-agent
+  #extras:
+  #  replicas: 3

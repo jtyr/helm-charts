@@ -26,8 +26,8 @@ spec:
         {{- toYaml .Values.prometheus.instanceSelectorMatchLabels | nindent 8 }}
       matchExpressions:
         {{- toYaml .Values.prometheus.instanceSelectorMatchExpressions | nindent 8 }}
-    {{- with .Values.prometheus.extras  }}
-      {{- toYaml .Values.prometheus.extras | nindent 6 }}
+    {{- with .Values.prometheus.extras }}
+      {{- toYaml . | nindent 4 }}
     {{- end }}
   {{- end }}
   resources:

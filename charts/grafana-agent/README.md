@@ -28,6 +28,10 @@ This kind of deployment uses configuration specified at the time of deployment.
 cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent jtyr/grafana-agent
 # Keep the reserce names simple
 fullnameOverride: grafana-agent
+# Run 3 replicas of the agent
+prometheus:
+  extras:
+    replicas: 3
 END
 ```
 
@@ -69,3 +73,4 @@ END
 | prometheus.create | bool | `true` | Whether to configure prometheus Agent. |
 | prometheus.instanceSelectorMatchLabels | object | `agent: grafana-agent` | PrometheusInstance selector based on label matching. |
 | prometheus.instanceSelectorMatchExpressions | list | `[]` | PrometheusInstance selector based on expression matching. |
+| prometheus.extras | object | `` | Extra settings for Prometheus-specific pods. |
