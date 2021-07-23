@@ -63,5 +63,6 @@ prometheus:
     #  operator: In
     #  values:
     #    - grafana-agent
+  replicas: 1
   #extras:
-  #  replicas: 3
+  #  replicaExternalLabelName: something
