@@ -9,30 +9,68 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 rules:
-  - apiGroups: [monitoring.grafana.com]
+  - apiGroups:
+      - monitoring.grafana.com
     resources:
       - grafana-agents
       - prometheus-instances
-    verbs: [get, list, watch]
-  - apiGroups: [monitoring.coreos.com]
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - monitoring.grafana.com
+    resources:
+      - grafana-agents/finalizers
+      - prometheus-instances/finalizers
+    verbs:
+      - "*"
+  - apiGroups:
+      - monitoring.coreos.com
     resources:
       - podmonitors
       - probes
       - servicemonitors
-    verbs: [get, list, watch]
-  - apiGroups: [""]
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
     resources:
       - namespaces
-    verbs: [get, list, watch]
-  - apiGroups: [""]
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
     resources:
       - secrets
+      - secrets/finalizers
       - services
-    verbs: [get, list, watch, create, update, patch, delete]
-  - apiGroups: ["apps"]
+      - services/finalizers
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - "apps"
     resources:
       - statefulsets
-    verbs: [get, list, watch, create, update, patch, delete]
+      - statefulsets/finalizers
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
 {{- with .Values.rbac.extraClusterRoleRules }}
 {{ toYaml . | indent 2 }}
 {{- end}}

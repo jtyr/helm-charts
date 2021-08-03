@@ -1,6 +1,6 @@
 # Grafana Agent Operator Helm Chart
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
 
 This Helm chart allows to deploy the Grafana Agent Operator.
 
@@ -25,7 +25,7 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 This kind of deployment uses configuration specified at the time of deployment.
 
 ```shell
-cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install operator jtyr/grafana-agent-operator
+cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent-operator jtyr/grafana-agent-operator
 # Keep the resource names simple
 fullnameOverride: grafana-agent-operator
 END
