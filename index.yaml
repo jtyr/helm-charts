@@ -608,6 +608,16 @@ entries:
   grafana-agent-operator:
   - apiVersion: v2
     appVersion: v0.18.0
+    created: "2021-08-03T17:44:12.16146382Z"
+    description: A Helm chart for Grafana Agent Operator
+    digest: 187a6d2f8cd8a6b4545357252c2efa0320129be0bbea9728598ab64c7f26f7bd
+    name: grafana-agent-operator
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-operator-0.1.3/grafana-agent-operator-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: v0.18.0
     created: "2021-08-03T11:43:52.743117133Z"
     description: A Helm chart for Grafana Agent Operator
     digest: 94ea97f6ba972db2a2daceb617f3c85570697515cf3920343b37526c726040c6
