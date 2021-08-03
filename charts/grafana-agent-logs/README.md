@@ -1,6 +1,6 @@
 # Agent Helm Chart - Logs
 
-![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v0.17.0](https://img.shields.io/badge/AppVersion-v0.17.0-informational?style=flat-square)
+![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Logs part of the Grafana Agent.
 
@@ -26,7 +26,7 @@ This kind of deployment uses configuration specified at the time of deployment.
 
 ```shell
 cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent-logs jtyr/grafana-agent-logs
-# Keep the reserce names simple
+# Keep the resource names simple
 fullnameOverride: agent-logs
 
 # Configure Grafana Cloud credentials (username and password)

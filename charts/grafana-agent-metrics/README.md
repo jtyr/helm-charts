@@ -1,6 +1,6 @@
 # Agent Helm Chart - Metrics
 
-![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![AppVersion: v0.17.0](https://img.shields.io/badge/AppVersion-v0.17.0-informational?style=flat-square)
+![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
 
 This Helm chart allows to deploy only the Metrics part of the Grafana Agent.
 
@@ -26,7 +26,7 @@ This kind of deployment uses configuration specified at the time of deployment.
 
 ```shell
 cat <<END | helm upgrade --create-namespace --namespace grafana --values - --install agent-metrics jtyr/grafana-agent-metrics
-# Keep the reserce names simple
+# Keep the resource names simple
 fullnameOverride: agent-metrics
 
 # Configure Grafana Cloud credentials (username and password)
