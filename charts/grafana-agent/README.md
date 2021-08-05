@@ -74,3 +74,5 @@ END
 | prometheus.instanceSelectorMatchExpressions | list | `[]` | PrometheusInstance selector based on expression matching. |
 | prometheus.extras | object | `` | Extra settings for Prometheus-specific pods. |
 | prometheus.replicas | int | `1` | Number of replicas of each shard to deploy for metrics pods. |
+| volumes | list | `[]` | List of volumes. |
+| volumeMounts | list | `[]` | List of volume mounts. |
