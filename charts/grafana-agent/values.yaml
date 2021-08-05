@@ -67,8 +67,11 @@ prometheus:
   #extras:
   #  replicaExternalLabelName: something
 
-# Volumes
+# Volumes for GrafanaAgent
 volumes: []
 
-# Volume mounts
+# Volume mounts for GrafanaAgent
 volumeMounts: []
+
+# Extra GrafanaAgent configuration
+extras: {}

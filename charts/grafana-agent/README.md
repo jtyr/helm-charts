@@ -1,6 +1,6 @@
 # Grafana Agent Helm Chart
 
-![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
+![Version: 0.2.5](https://img.shields.io/badge/Version-0.2.5-informational?style=flat-square) ![AppVersion: v0.18.0](https://img.shields.io/badge/AppVersion-v0.18.0-informational?style=flat-square)
 
 This Helm chart allows to deploy the Grafana Agent via Grafana Agent Operator.
 
@@ -52,27 +52,28 @@ END
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| affinity | object | `{}` | Pod affinity. |
 | annotations | object | `{}` | GrafanaAgent annotations. |
-| podAnnotations | object | `{}` | Pod annotations. |
+| extras | object | `{}` | Extra GrafanaAgent configuration. |
 | image.pullSecrets | list | `[]` | List of image pull secrets. |
 | image.repository | string | `"grafana/agent"` | Image repository and name. |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart `appVersion`. |
+| logLevel | string | `"info"` | Log level. |
+| nodeSelector | object | `{}` | Pod node selector. |
+| podAnnotations | object | `{}` | Pod annotations. |
+| prometheus.create | bool | `true` | Whether to configure prometheus Agent. |
+| prometheus.extras | object | `` | Extra settings for Prometheus-specific pods. |
+| prometheus.instanceSelectorMatchExpressions | list | `[]` | PrometheusInstance selector based on expression matching. |
+| prometheus.instanceSelectorMatchLabels | object | `agent: grafana-agent` | PrometheusInstance selector based on label matching. |
+| prometheus.replicas | int | `1` | Number of replicas of each shard to deploy for metrics pods. |
+| rbac.create | bool | `true` | Whether to create Cluster Role and Cluster Role Binding. |
+| rbac.extraClusterRoleRules | list | `[]` | Extra ClusterRole rules. |
+| rbac.useExistingRole | string | `""` | Name of existing Role or Cluster role to use. |
+| resources | object | `{}` | Resources for the Agent container. |
+| securityContext | object | `{}` | Security context for the Agent container. |
 | serviceAccount.annotations | object | `{}` | Service Account annotations. |
 | serviceAccount.create | bool | `true` | Whether the Service Account should be created. |
 | serviceAccount.name | string | `""` | Service Account name. |
-| resources | object | `{}` | Resources for the Agent container. |
-| rbac.create | bool | `true` | Whether to create Cluster Role and Cluster Role Binding. |
-| rbac.useExistingRole | string | `""` | Name of existing Role or Cluster role to use. |
-| rbac.extraClusterRoleRules | list | `[]` | Extra ClusterRole rules. |
-| securityContext | object | `{}` | Security context for the Agent container. |
-| nodeSelector | object | `{}` | Pod node selector. |
 | tolerations | list | `[]` | List of Pod tolerations. |
-| affinity | object | `{}` | Pod affinity. |
-| logLevel | string | `"info"` | Log level. |
-| prometheus.create | bool | `true` | Whether to configure prometheus Agent. |
-| prometheus.instanceSelectorMatchLabels | object | `agent: grafana-agent` | PrometheusInstance selector based on label matching. |
-| prometheus.instanceSelectorMatchExpressions | list | `[]` | PrometheusInstance selector based on expression matching. |
-| prometheus.extras | object | `` | Extra settings for Prometheus-specific pods. |
-| prometheus.replicas | int | `1` | Number of replicas of each shard to deploy for metrics pods. |
-| volumes | list | `[]` | List of volumes. |
 | volumeMounts | list | `[]` | List of volume mounts. |
+| volumes | list | `[]` | List of volumes. |
