@@ -3,6 +3,16 @@ entries:
   grafana-agent:
   - apiVersion: v2
     appVersion: v0.18.0
+    created: "2021-08-05T17:59:52.771686849Z"
+    description: A Helm chart for Grafana Agent
+    digest: b441346e8c26549008e46e132b92be27b23da139b737b16d3ef31a6b923c4690
+    name: grafana-agent
+    type: application
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/grafana-agent-0.2.5/grafana-agent-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: v0.18.0
     created: "2021-08-05T15:22:39.060668133Z"
     description: A Helm chart for Grafana Agent
     digest: 339c76bb749daa4875330f901f8b985a7b4c392758063f5bd6eae27b8441ab96
