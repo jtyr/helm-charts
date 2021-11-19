@@ -8,4 +8,4 @@ metadata:
   name: {{ $k }}
   labels: {{ include  "chart.labels" $global | nindent 4 }}
 spec: {{ toYaml $v | nindent 2}}
-{{- end }}
+{{ end }}

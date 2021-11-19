@@ -10,4 +10,4 @@ metadata:
 spec:
   type: {{ $v.type }}
   pathname: {{ $v.pathname }}
-{{- end }}
+{{ end }}

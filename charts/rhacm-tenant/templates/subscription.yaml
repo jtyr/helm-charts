@@ -13,4 +13,4 @@ spec:
   channel: {{ include "chart.name" . }}-ch-git/channel
   placement:
     local: true
-{{- end }}
+{{ end }}
