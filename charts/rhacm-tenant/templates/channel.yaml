@@ -1,0 +1,13 @@
+{{- $global := . }}
+{{- range $k, $v := .Values.channels }}
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  namespace: {{ include "chart.name" $global }}-ch-{{ $k }}
+  name: channel
+  labels: {{ include  "chart.labels" $global | nindent 4 }}
+spec:
+  type: {{ $v.type }}
+  pathname: {{ $v.pathname }}
+{{- end }}

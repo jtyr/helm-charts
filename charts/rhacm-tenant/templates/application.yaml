@@ -1,0 +1,14 @@
+---
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: {{ include "chart.name" . }}
+  namespace: {{ include "chart.name" . }}
+  labels: {{ include  "chart.labels" . | nindent 4 }}
+spec:
+  componentKinds:
+    - group: apps.open-cluster-management.io
+      kind: Subscription
+  selector:
+    matchLabels:
+      acm-app: {{ include "chart.name" . }}

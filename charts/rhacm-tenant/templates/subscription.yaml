@@ -1,0 +1,16 @@
+{{- if .Values.channels.git }}
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: {{ include "chart.name" . }}
+  namespace: {{ include "chart.name" . }}
+  labels:
+    acm-app: {{ include "chart.name" . }}
+    {{- include  "chart.labels" . | nindent 4 }}
+  annotations: {{ toYaml .Values.channels.git.annotations | nindent 4}}
+spec:
+  channel: {{ include "chart.name" . }}-ch-git/channel
+  placement:
+    local: true
+{{- end }}

@@ -1,0 +1,9 @@
+# Allow to override the chart name
+name: null
+
+# Map of channels to be created (usually "git" and "helm").
+# See the README for more details.
+channels: {}
+
+# Map of placement rules to be created. Usually not needed.
+placementRules: {}

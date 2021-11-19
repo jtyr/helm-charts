@@ -1,0 +1,9 @@
+{{- $global := . }}
+{{- range $k, $v := .Values.channels -}}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ include "chart.name" $global }}-ch-{{ $k }}
+  labels: {{ include  "chart.labels" $global | nindent 4 }}
+{{- end }}

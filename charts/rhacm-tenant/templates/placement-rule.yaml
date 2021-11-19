@@ -1,0 +1,11 @@
+{{- $global := . }}
+{{- range $k, $v := .Values.placementRules -}}
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  namespace: {{ include "chart.name" $global }}
+  name: {{ $k }}
+  labels: {{ include  "chart.labels" $global | nindent 4 }}
+spec: {{ toYaml $v | nindent 2}}
+{{- end }}
