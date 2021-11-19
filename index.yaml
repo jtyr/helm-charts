@@ -994,4 +994,13 @@ entries:
     urls:
     - https://github.com/jtyr/helm-charts/releases/download/openvpn-4.2.5-1/openvpn-4.2.5-1.tgz
     version: 4.2.5-1
+  rhacm-tenant:
+  - apiVersion: v2
+    created: "2021-11-19T22:18:03.80786107Z"
+    description: Red Hat ACM tenant repo onboarding
+    digest: 26e74b6c81532cb3524eb8c5457090e31f14219e2cda656bac83ba78ffefecb1
+    name: rhacm-tenant
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/rhacm-tenant-0.1.0/rhacm-tenant-0.1.0.tgz
+    version: 0.1.0
 generated: "2020-05-13T15:57:11.779195256Z"
