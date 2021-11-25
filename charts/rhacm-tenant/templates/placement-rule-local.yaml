@@ -1,0 +1,11 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: local
+  namespace: {{ include "chart.name" $global }}
+  labels: {{ include  "chart.labels" $global | nindent 4 }}
+spec:
+  clusterSelector:
+    matchLabels:
+      local-cluster: "true"

@@ -1,4 +1,4 @@
 apiVersion: v2
 name: rhacm-tenant
 description: Red Hat ACM tenant repo onboarding
-version: 0.1.2
+version: 0.1.3

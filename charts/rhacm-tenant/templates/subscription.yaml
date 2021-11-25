@@ -14,5 +14,6 @@ metadata:
 spec:
   channel: {{ include "chart.name" . }}-ch-git/channel
   placement:
-    local: true
+    placementRef:
+      name: local
 {{ end }}
