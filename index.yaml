@@ -996,6 +996,14 @@ entries:
     version: 4.2.5-1
   rhacm-tenant:
   - apiVersion: v2
+    created: "2021-11-26T14:39:22.469457585Z"
+    description: Red Hat ACM tenant repo onboarding
+    digest: 2d1ec5c9a079f059a8fd9cf0bb5254e88abf748a827b5bf9bfb8f00147ab7257
+    name: rhacm-tenant
+    urls:
+    - https://github.com/jtyr/helm-charts/releases/download/rhacm-tenant-0.1.9/rhacm-tenant-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
     created: "2021-11-26T11:31:39.657138958Z"
     description: Red Hat ACM tenant repo onboarding
     digest: 5cfecfef220232d2760d3a52680c6b9e6e1309f070176d9f64f156489923c2f0
