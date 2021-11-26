@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: {{ include "chart.name" . }}
   namespace: {{ include "chart.name" . }}
-  labels: {{ include  "chart.labels" . | nindent 4 }}
+  labels: {{- include  "chart.labels" . | nindent 4 }}
 spec:
   componentKinds:
     - group: apps.open-cluster-management.io

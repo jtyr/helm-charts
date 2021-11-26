@@ -4,7 +4,7 @@ kind: PlacementRule
 metadata:
   name: local
   namespace: {{ include "chart.name" . }}
-  labels: {{ include  "chart.labels" . | nindent 4 }}
+  labels: {{- include  "chart.labels" . | nindent 4 }}
 spec:
   clusterSelector:
     matchLabels:

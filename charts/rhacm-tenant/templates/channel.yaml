@@ -8,7 +8,7 @@ metadata:
   name: channel
   annotations:
     apps.open-cluster-management.io/reconcile-rate: high
-  labels: {{ include  "chart.labels" $global | nindent 4 }}
+  labels: {{- include  "chart.labels" $global | nindent 4 }}
 spec:
   type: {{ $v.type }}
   pathname: {{ $v.pathname }}

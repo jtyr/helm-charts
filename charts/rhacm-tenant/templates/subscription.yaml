@@ -9,7 +9,7 @@ metadata:
     acm-app: {{ include "chart.name" . }}
     {{- include  "chart.labels" . | nindent 4 }}
   {{- if .Values.channels.git.subscriptionAnnotations }}
-  annotations: {{ toYaml .Values.channels.git.subscriptionAnnotations | nindent 4 }}
+  annotations: {{- toYaml .Values.channels.git.subscriptionAnnotations | nindent 4 }}
   {{- end }}
 spec:
   channel: {{ include "chart.name" . }}-ch-git/channel
