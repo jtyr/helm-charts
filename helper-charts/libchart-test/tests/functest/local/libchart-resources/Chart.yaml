@@ -1,0 +1,4 @@
+apiVersion: v2
+name: libchart-resources
+description: Resources used for testing the `libchart`.
+version: 0.1.0

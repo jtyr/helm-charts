@@ -1,0 +1,12 @@
+apiVersion: v2
+name: crsm-operator
+description: A Helm chart for the CRSM Operator.
+version: 0.1.0
+appVersion: 0.1.0
+home: https://github.com/jtyr/crsm-operator
+maintainers:
+  - name: Jiri Tyr
+dependencies:
+  - name: libchart
+    repository: oci://ghcr.io/jtyr/helm-charts/libchart:0.1.0
+    version: 0.1.0

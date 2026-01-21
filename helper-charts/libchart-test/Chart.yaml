@@ -1,0 +1,6 @@
+apiVersion: v2
+name: libchart-test
+description: Helper chart to test the `libchart` chart.
+version: 0.1.0
+maintainers:
+  - name: Jiri Tyr

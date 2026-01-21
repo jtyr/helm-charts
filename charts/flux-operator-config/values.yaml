@@ -1,0 +1,28 @@
+# Flux distribution settings.
+distribution:
+  # -- Flux version to install ("2.x" tracks the latest 2.x, or pin like "2.7.0").
+  version: 2.x
+  # -- OCI registry for the Flux controller images.
+  registry: ghcr.io/fluxcd
+
+# -- Flux controllers to install.
+# @default -- See [`values.yaml`](values.yaml) file for more details.
+components:
+  - source-controller
+  - kustomize-controller
+  - helm-controller
+
+# Git sync source for the FluxInstance.
+sync:
+  # -- Source authentication provider (`github` enables GitHub App auth).
+  provider: github
+  # -- Git repository URL (HTTPS) to sync from.
+  url: https://github.com/jtyr/turingpi-gitops.git
+  # -- Git reference to sync (branch, tag or commit).
+  ref: refs/heads/main
+  # -- Path within the repository to reconcile.
+  path: gitops
+  # -- Secret (GitHub App auth) in the release namespace used to authenticate.
+  pullSecret: flux-system
+  # -- age Secret (in the release namespace) for SOPS decryption of synced manifests; empty disables decryption.
+  decryptionSecret: sops-age

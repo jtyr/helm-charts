@@ -1,0 +1,26 @@
+# -- ACME account email (Let's Encrypt expiry notices). Override per cluster.
+email: admin@example.com
+
+# Cloudflare API token Secret (created out-of-band, SOPS-encrypted in the
+# gitops ResourceSet) referenced by the ClusterIssuers' DNS-01 solver.
+cloudflareTokenSecret:
+  # -- Secret name holding the Cloudflare API token.
+  name: cloudflare-api-token
+  # -- Key within the Secret holding the token.
+  key: api-token
+
+# -- DNS zones the Cloudflare DNS-01 solver is selected for. Override per cluster.
+dnsZones:
+  - example.com
+
+# Wildcard certificate served by the Gateway.
+certificate:
+  # -- ClusterIssuer to use (`letsencrypt-staging` or `letsencrypt-prod`).
+  issuer: letsencrypt-staging
+  # -- Secret (in the namespace below) that will hold the issued certificate.
+  secretName: wildcard-tls
+  # -- Namespace for the certificate Secret (same namespace as the Gateway).
+  namespace: traefik
+  # -- Names covered by the certificate. Override per cluster.
+  dnsNames:
+    - "*.example.com"

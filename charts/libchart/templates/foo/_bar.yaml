@@ -1,0 +1,18 @@
+{{- /* Generates Bar resource for the Foo Controller */}}
+{{- define "libchart.v1.foo.bars" }}
+
+{{- range .Values.libchart.foo.bars }}
+---
+apiVersion: foo.io/v1alpha1
+kind: Bar
+metadata:
+  name: {{ .name }}
+  {{- with .namespace }}
+  namespace: {{ . }}
+  {{- end }}
+  labels: {{- include "libchart.v1.labels" $ | nindent 4 }}
+spec:
+  serviceAccount: {{ default (include "libchart.v1.serviceAccountName" $) .serviceAccountName }}
+{{- end }}
+
+{{- end }}

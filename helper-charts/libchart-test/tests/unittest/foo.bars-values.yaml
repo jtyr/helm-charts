@@ -1,0 +1,6 @@
+libchart:
+  foo:
+    bars:
+      - name: test1
+      - name: test2
+        serviceAccountName: my-test2-sa

@@ -1,0 +1,70 @@
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+      - id: check-yaml
+        exclude: .*/templates/.*\.yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: trailing-whitespace
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.48.0
+    hooks:
+      - id: markdownlint
+        name: Markdownlint
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+        args:
+          - --strict
+        exclude: .*/templates/.*\.yaml
+
+  - repo: https://github.com/jtyr/pre-commit-hooks
+    rev: v1.7.0
+    hooks:
+      - id: helm-unittest
+      - id: check-helm-version
+        args:
+          - --autofix
+          - --autofix-strategy=conventional
+
+  - repo: https://github.com/norwoodj/helm-docs
+    rev: v1.14.2
+    hooks:
+      - id: helm-docs-container
+        entry: jnorwood/helm-docs:v1.14.2
+
+  - repo: https://github.com/jtyr/kubeconform-helm
+    rev: v0.3.0
+    hooks:
+      - id: kubeconform-helm
+        args:
+          - --strict
+          - --verbose
+          - --summary
+          - --config=.kubeconform.yaml
+          - --kubernetes-version=1.34.0
+          - --path-sub-pattern=^charts/(libchart),helper-charts/\1-test
+          - --schema-location=default
+          - --schema-location=https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+        name: Lint shell scripts
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit

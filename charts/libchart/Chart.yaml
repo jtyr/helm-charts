@@ -1,0 +1,7 @@
+apiVersion: v2
+name: libchart
+description: Library chart.
+version: 0.1.0
+type: library
+maintainers:
+  - name: Jiri Tyr

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+
+  "$defs": {
+    "kubernetes": {
+      "name": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "nameOrNull": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/kubernetes/name"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    }
+  },
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "foo",
+    "serviceAccount"
+  ],
+  "properties": {
+    "global": {
+      "type": "object"
+    },
+
+    "foo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bars"
+      ],
+      "properties": {
+        "bars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/$defs/kubernetes/name"
+              },
+              "serviceAccountName": {
+                "$ref": "#/$defs/kubernetes/name"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "serviceAccount": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/kubernetes/nameOrNull"
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,16 @@
+name: Changed charts
+description: A GitHub Action that helps to detect Helm charts that have changed.
+
+runs:
+  using: composite
+  steps:
+    - name: Find
+      id: find
+      shell: bash
+      run: >-
+        ${{ github.action_path }}/scripts/find.sh
+
+outputs:
+  charts:
+    description: Lists of Helm charts that have changed. Empty list if no Helm chart has been changed.
+    value: ${{ steps.find.outputs.charts }}

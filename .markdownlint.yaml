@@ -1,0 +1,6 @@
+# Ignore line length
+MD013: false
+# Ignore duplicate headings
+MD024: false
+# Ignore table styling for helm-docs generated tables
+MD060: false

@@ -1,0 +1,67 @@
+# Publish chart
+
+This is a GitHub Action that helps to publish a Helm chart into a OCI regsitry.
+
+## Usage
+
+The Action can be used like this:
+
+```yaml
+name: On merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  detect:
+    name: Detect changed charts
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Find changed charts
+        id: find
+        uses: ./.github/actions/changed-charts
+
+    outputs:
+      charts: ${{ steps.find.outputs.charts }}
+
+  publish:
+    name: Publish ${{ matrix.chart }}
+    runs-on: ubuntu-latest
+    needs: detect
+    if: needs.detect.outputs.charts != '[""]'
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+      attestations: write
+    strategy:
+      matrix:
+        chart: ${{ fromJSON(needs.detect.outputs.charts) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Login to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Package and publish chart
+        working-directory: charts/${{ matrix.name }}
+        uses: ./github/actions/package-publish_chart
+```
+
+## Author
+
+Jiri Tyr

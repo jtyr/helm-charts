@@ -1,0 +1,69 @@
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ template "libchart.v1.fullname" . }}
+  labels: {{- include "libchart.v1.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - ksm.jtyr.io
+    resources:
+      - customresourcestatemetrics
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - ksm.jtyr.io
+    resources:
+      - customresourcestatemetrics/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - ksm.jtyr.io
+    resources:
+      - customresourcestatemetrics/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - create
+      - get
+      - list
+      - update
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+  - apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+{{- end }}

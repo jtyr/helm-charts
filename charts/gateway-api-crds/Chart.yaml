@@ -1,0 +1,5 @@
+apiVersion: v2
+name: gateway-api-crds
+description: Gateway API CRDs for the standard channel.
+version: 0.1.0
+appVersion: 1.5.1

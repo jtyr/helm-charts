@@ -1,0 +1,6 @@
+apiVersion: v2
+name: flux-operator-config
+description: >-
+  Configuration for the Flux Operator - the FluxInstance that syncs the GitOps
+  repository and the binding to the built-in flux-web-admin role for UI access.
+version: 0.1.2

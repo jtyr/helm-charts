@@ -1,0 +1,13 @@
+# -- Foo Controller resources. See the [`values.yaml`](values.yaml) file for more details.
+foo:
+  # List of Bars to be created.
+  bars: []
+#    - # Name of the Bar resource.
+#      name: upbound
+#      # Baz of the Bar
+#      baz: John
+
+serviceAccount:
+  # -- Name of the ServiceAccount.
+  # If not set, the name will be derved from Helm chart name and the release name.
+  name: null
