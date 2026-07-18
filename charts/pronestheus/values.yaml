@@ -1,0 +1,105 @@
+# This is to override the chart name.
+nameOverride: ""
+fullnameOverride: ""
+
+# This sets the container image.
+image:
+  registry: ghcr.io
+  image: jtyr/docker/pronestheus
+  # This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# This is for the secrets for pulling an image from a private repository.
+imagePullSecrets: []
+
+# This will set the replicaset count.
+replicaCount: 1
+
+# This section builds out the service account.
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  name: ""
+
+# This is for setting Kubernetes Annotations to a Pod.
+podAnnotations: {}
+# This is for setting Kubernetes Labels to a Pod.
+podLabels: {}
+
+podSecurityContext:
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+
+# Extra environment variables for the container.
+env: []
+# Environment variables sourced from Secrets/ConfigMaps. ProNestheus reads its
+# SDM OAuth credentials from PRONESTHEUS_NEST_CLIENT_ID / _CLIENT_SECRET /
+# _PROJECT_ID / _REFRESH_TOKEN, so point this at a Secret with those keys.
+envFrom: []
+
+# Liveness and readiness probes (ProNestheus only serves /metrics).
+livenessProbe:
+  httpGet:
+    path: /metrics
+    port: http
+  initialDelaySeconds: 15
+  periodSeconds: 30
+readinessProbe:
+  httpGet:
+    path: /metrics
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 20
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 32Mi
+
+# Additional volumes on the output Deployment definition.
+volumes: []
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# This is for setting up a service.
+service:
+  type: ClusterIP
+  # ProNestheus default listen port.
+  port: 9777
+
+# -- Enable ServiceMonitor for Prometheus metrics scrape.
+serviceMonitor:
+  enabled: true
+  metricsEndpoints:
+    - port: http
+      path: /metrics
+      interval: 60s
+
+pdb:
+  create: false
+  minAvailable: 1
+  maxUnavailable: null

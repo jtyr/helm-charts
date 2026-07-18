@@ -1,0 +1,8 @@
+apiVersion: v2
+name: pronestheus
+description: A Helm chart for the ProNestheus Nest thermostat Prometheus exporter.
+version: 0.1.0
+appVersion: v1.1.0
+home: https://github.com/grdl/pronestheus
+maintainers:
+  - name: Jiri Tyr

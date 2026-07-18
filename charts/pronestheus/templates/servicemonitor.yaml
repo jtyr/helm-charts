@@ -1,0 +1,31 @@
+{{- if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ template "pronestheus.fullname" . }}
+  labels:
+    {{- include "pronestheus.labels" . | nindent 4 }}
+    {{- range $key, $value := .Values.serviceMonitor.extraLabels }}
+      {{- printf "%s: %s" $key (tpl $value $ | quote) | nindent 4 }}
+    {{- end }}
+  {{- if .Values.serviceMonitor.annotations }}
+  annotations:
+    {{- range $key, $value := .Values.serviceMonitor.annotations }}
+      {{- printf "%s: %s" $key (tpl $value $ | quote) | nindent 4 }}
+    {{- end }}
+  {{- end }}
+spec:
+  selector:
+    matchLabels: {{- include "pronestheus.selectorLabels" . | nindent 6 }}
+  endpoints:
+    {{- toYaml .Values.serviceMonitor.metricsEndpoints | nindent 4 }}
+      {{- with .Values.serviceMonitor.relabelings }}
+      relabelings: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.serviceMonitor.metricRelabelings }}
+      metricRelabelings: {{- toYaml . | nindent 8 }}
+      {{- end }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+{{- end }}
